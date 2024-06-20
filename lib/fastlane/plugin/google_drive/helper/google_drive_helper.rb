@@ -1,5 +1,5 @@
 require 'fastlane_core/ui/ui'
-require 'google_drive'
+require 'google_drive2'
 module Fastlane
   UI = FastlaneCore::UI unless Fastlane.const_defined?("UI")
 
