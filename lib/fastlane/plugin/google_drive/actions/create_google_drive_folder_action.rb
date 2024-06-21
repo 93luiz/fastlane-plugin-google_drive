@@ -19,6 +19,12 @@ module Fastlane
         folder = Helper::GoogleDriveHelper.file_by_id(
           session: session, fid: params[:folder_id]
         )
+        if !folder.is_a?(GoogleDrive::Collection)
+          sleep(8)
+          folder = Helper::GoogleDriveHelper.file_by_id(
+            session: session, fid: params[:folder_id]
+          )
+        end
 
         title = params[:folder_title]
         UI.message('------------------')
