@@ -24,6 +24,8 @@ module Fastlane
           folder = Helper::GoogleDriveHelper.file_by_id(
             session: session, fid: params[:folder_id]
           )
+          UI.abort_with_message!("Unable to find parent folder") unless folder.is_a(GoogleDrive::Collection)
+          puts folder
         end
 
         title = params[:folder_title]
