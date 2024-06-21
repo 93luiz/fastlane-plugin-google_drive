@@ -1,4 +1,5 @@
 require 'fastlane/action'
+require 'google_drive'
 require_relative '../helper/google_drive_helper'
 
 module Fastlane
